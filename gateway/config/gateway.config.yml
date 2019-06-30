@@ -1,0 +1,49 @@
+http:
+  port: 8080
+admin:
+  port: 9876
+  host: localhost
+apiEndpoints:
+  api:
+    host: localhost
+    paths: 
+      - '/inventories/*'
+      - '/orders/*'
+  users:
+    host: localhost
+    path: '/users/' 
+serviceEndpoints:
+  monolith:
+    url: 'http://localhost:3000'
+  userssrv: 
+    url: 'https://google.com'
+policies:
+  - basic-auth
+  - cors
+  - expression
+  - key-auth
+  - log
+  - oauth2
+  - proxy
+  - rate-limit
+pipelines:
+  default:
+    apiEndpoints:
+      - api
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: monolith 
+              changeOrigin: true
+  users:
+    apiEndpoints:
+      - users
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: userssrv 
+              changeOrigin: true

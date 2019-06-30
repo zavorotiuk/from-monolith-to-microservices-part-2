@@ -1,0 +1,12 @@
+.DS_Store
+gateway/node_modules
+monolith/node_modules
+monolith/dist
+monolith/logs
+monolith/coverage
+monolith/variables.env
+users-service/node_modules
+users-service/dist
+users-service/logs
+users-service/coverage
+users-service/variables.env
