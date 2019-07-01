@@ -11,12 +11,12 @@ apiEndpoints:
       - '/orders/*'
   users:
     host: localhost
-    path: '/users/' 
+    path: '/users/*' 
 serviceEndpoints:
   monolith:
     url: 'http://localhost:3000'
   userssrv: 
-    url: 'https://google.com'
+    url: 'http://localhost:4000'
 policies:
   - basic-auth
   - cors
