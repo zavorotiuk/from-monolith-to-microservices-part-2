@@ -1,5 +1,5 @@
 {
-    "name": "nodejs-monolith-app",
+    "name": "users-service",
     "version": "0.0.1",
     "description": "",
     "main": "dist/index.js",
